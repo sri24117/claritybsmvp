@@ -1,0 +1,92 @@
+x-app-environment: &app-environment
+  ENVIRONMENT: "${ENVIRONMENT:-production}"
+  DOMAIN: "${DOMAIN:-claritybs.in}"
+  APP_ORIGIN: "${APP_ORIGIN:-https://claritybs.in}"
+  DATABASE_URL: "${DATABASE_URL:?Set DATABASE_URL in Coolify}"
+  DATA_ENCRYPTION_KEY: "${DATA_ENCRYPTION_KEY:?Set DATA_ENCRYPTION_KEY in Coolify}"
+  PUBLIC_INTAKE_ENABLED: "${PUBLIC_INTAKE_ENABLED:-false}"
+  BUSINESS_NAME: "${BUSINESS_NAME:-Clarity Blood Sugar}"
+  SUPPORT_EMAIL: "${SUPPORT_EMAIL:?Set SUPPORT_EMAIL in Coolify}"
+  RETENTION_DAYS: "${RETENTION_DAYS:-90}"
+  PAYMENT_MODE: "${PAYMENT_MODE:-disabled}"
+  RAZORPAY_KEY_ID: "${RAZORPAY_KEY_ID:-}"
+  RAZORPAY_KEY_SECRET: "${RAZORPAY_KEY_SECRET:-}"
+  RAZORPAY_WEBHOOK_SECRET: "${RAZORPAY_WEBHOOK_SECRET:-}"
+  NOTIFICATION_MODE: "${NOTIFICATION_MODE:-manual}"
+  WHATSAPP_ACCESS_TOKEN: "${WHATSAPP_ACCESS_TOKEN:-}"
+  WHATSAPP_PHONE_NUMBER_ID: "${WHATSAPP_PHONE_NUMBER_ID:-}"
+  META_APP_SECRET: "${META_APP_SECRET:-}"
+  WHATSAPP_VERIFY_TOKEN: "${WHATSAPP_VERIFY_TOKEN:-}"
+  WHATSAPP_API_VERSION: "${WHATSAPP_API_VERSION:-}"
+  WHATSAPP_TEMPLATE_NAME: "${WHATSAPP_TEMPLATE_NAME:-}"
+  WHATSAPP_TEMPLATE_LANGUAGE: "${WHATSAPP_TEMPLATE_LANGUAGE:-en}"
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: clarity
+      POSTGRES_DB: claritybs
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in Coolify}"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U clarity -d claritybs"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  migrate:
+    build:
+      context: .
+    environment: *app-environment
+    command: ["python", "-m", "app.cli", "init-db"]
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+
+  api:
+    build:
+      context: .
+    restart: unless-stopped
+    environment: *app-environment
+    expose:
+      - "8000"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/live', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  worker:
+    build:
+      context: .
+    restart: unless-stopped
+    environment: *app-environment
+    command: ["python", "-m", "app.worker"]
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+volumes:
+  postgres_data:
