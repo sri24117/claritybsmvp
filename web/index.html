@@ -1,0 +1,3064 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Clarity Blood Sugar — Practical Nutrition &amp; Dietitian Support
+    </title>
+    <meta
+      name="description"
+      content="Practical nutrition and dietitian support for sugar reports, everyday eating, weight goals, protein and fitness support, built around Indian food and real routines."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Instrument+Serif:ital@0;1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f7f5ef;
+        --paper: #fffdf8;
+        --ink: #111315;
+        --muted: #6f746f;
+        --soft: #ebe6da;
+        --line: rgba(20, 25, 20, 0.1);
+        --green: #0b3b2e;
+        --green2: #165f49;
+        --mint: #dff3e9;
+        --lime: #b8e6c9;
+        --gold: #c99a45;
+        --red: #b5483b;
+        --shadow: 0 24px 80px rgba(23, 32, 24, 0.12);
+        --shadow-soft: 0 12px 40px rgba(23, 32, 24, 0.08);
+        --r: 28px;
+        --r2: 42px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(
+            circle at 10% -10%,
+            rgba(184, 230, 201, 0.42),
+            transparent 32%
+          ),
+          radial-gradient(
+            circle at 95% 5%,
+            rgba(201, 154, 69, 0.18),
+            transparent 34%
+          ),
+          var(--bg);
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.5;
+        overflow-x: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+      .grain {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.28;
+        z-index: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.14'/%3E%3C/svg%3E");
+      }
+      .wrap {
+        width: min(1180px, 92vw);
+        margin: auto;
+        position: relative;
+        z-index: 1;
+      }
+      .nav {
+        position: fixed;
+        left: 50%;
+        top: 18px;
+        transform: translateX(-50%);
+        z-index: 20;
+        width: min(1060px, 92vw);
+        height: 62px;
+        padding: 0 18px 0 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        background: rgba(255, 253, 248, 0.72);
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        box-shadow: 0 10px 36px rgba(15, 28, 18, 0.08);
+        backdrop-filter: blur(22px);
+        border-radius: 999px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        color: var(--green);
+      }
+      .mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--green), var(--green2));
+        display: grid;
+        place-items: center;
+        color: #fff;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24);
+      }
+      .brand span {
+        color: var(--gold);
+      }
+      .links {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        color: #5e635f;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .links a:hover {
+        color: var(--green);
+      }
+      .nav-cta {
+        border: 0;
+        background: var(--ink);
+        color: #fff;
+        padding: 11px 18px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 10px 24px rgba(17, 19, 21, 0.16);
+      }
+      .nav-cta:hover {
+        transform: translateY(-1px);
+      }
+
+      .hero {
+        min-height: 100vh;
+        padding: 138px 0 82px;
+        display: grid;
+        align-items: center;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.04fr 0.96fr;
+        gap: 56px;
+        align-items: center;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 8px 13px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(11, 59, 46, 0.1);
+        box-shadow: 0 8px 30px rgba(15, 28, 18, 0.06);
+        font-size: 12px;
+        font-weight: 800;
+        color: var(--green);
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+      }
+      .pulse {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #32bf75;
+        box-shadow: 0 0 0 7px rgba(50, 191, 117, 0.12);
+      }
+      h1 {
+        font-size: clamp(48px, 7vw, 92px);
+        line-height: 0.92;
+        letter-spacing: -0.075em;
+        font-weight: 800;
+        margin-bottom: 28px;
+        color: #101511;
+      }
+      h1 .serif {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-weight: 400;
+        font-style: italic;
+        letter-spacing: -0.035em;
+        color: var(--green);
+      }
+      .hero-sub {
+        font-size: clamp(18px, 2vw, 22px);
+        line-height: 1.55;
+        color: #555b56;
+        max-width: 650px;
+        margin-bottom: 34px;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 26px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 999px;
+        padding: 16px 24px;
+        font-weight: 800;
+        font-size: 15px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: 0.25s ease;
+        white-space: nowrap;
+      }
+      .btn-primary {
+        background: var(--green);
+        color: #fff;
+        box-shadow: 0 18px 44px rgba(11, 59, 46, 0.24);
+      }
+      .btn-primary:hover {
+        background: #092f25;
+        transform: translateY(-2px);
+      }
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.62);
+        border-color: rgba(11, 59, 46, 0.12);
+        color: var(--green);
+      }
+      .btn-secondary:hover {
+        background: #fff;
+        transform: translateY(-2px);
+      }
+      .micro {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        color: #737873;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .micro span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .micro span::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+
+      .device {
+        position: relative;
+        min-height: 650px;
+        display: grid;
+        place-items: center;
+      }
+      .orb {
+        position: absolute;
+        width: 540px;
+        height: 540px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          rgba(223, 243, 233, 0.95),
+          rgba(255, 253, 248, 0.42)
+        );
+        filter: blur(0);
+        box-shadow:
+          inset 0 0 80px rgba(255, 255, 255, 0.85),
+          0 50px 120px rgba(11, 59, 46, 0.12);
+      }
+      .phone {
+        position: relative;
+        width: min(390px, 90vw);
+        background: #111;
+        border-radius: 48px;
+        padding: 12px;
+        box-shadow: 0 38px 110px rgba(6, 20, 14, 0.36);
+        transform: rotate(-2.5deg);
+      }
+      .screen {
+        background: linear-gradient(180deg, #fffdf8, #f6f2e9);
+        border-radius: 38px;
+        min-height: 620px;
+        padding: 28px 24px;
+        overflow: hidden;
+        position: relative;
+      }
+      .screen::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 28%;
+        right: 28%;
+        height: 26px;
+        border-radius: 0 0 18px 18px;
+        background: #111;
+      }
+      .app-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 16px;
+        margin-bottom: 24px;
+      }
+      .app-logo {
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        color: var(--green);
+      }
+      .status {
+        font-size: 11px;
+        font-weight: 800;
+        color: #1c7d51;
+        background: #e2f5ea;
+        border: 1px solid rgba(28, 125, 81, 0.12);
+        padding: 5px 9px;
+        border-radius: 999px;
+      }
+      .score-card {
+        background: var(--green);
+        color: #fff;
+        border-radius: 30px;
+        padding: 24px;
+        box-shadow: 0 22px 56px rgba(11, 59, 46, 0.28);
+        position: relative;
+        overflow: hidden;
+      }
+      .score-card::after {
+        content: "";
+        position: absolute;
+        right: -35px;
+        top: -35px;
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.09);
+      }
+      .score-label {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.65);
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .score {
+        font-size: 56px;
+        line-height: 1;
+        font-weight: 900;
+        letter-spacing: -0.07em;
+        margin-bottom: 8px;
+      }
+      .score small {
+        font-size: 18px;
+        letter-spacing: 0;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .score-text {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.74);
+        max-width: 240px;
+      }
+      .metric-list {
+        margin-top: 18px;
+        display: grid;
+        gap: 10px;
+      }
+      .metric {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(11, 59, 46, 0.08);
+        border-radius: 18px;
+        padding: 14px 15px;
+        box-shadow: 0 10px 24px rgba(11, 59, 46, 0.05);
+      }
+      .metric b {
+        font-size: 13px;
+        color: #26302a;
+      }
+      .metric span {
+        font-size: 13px;
+        font-weight: 900;
+        color: var(--green);
+      }
+      .food-card {
+        margin-top: 18px;
+        padding: 18px;
+        background: #fff;
+        border-radius: 24px;
+        border: 1px solid rgba(11, 59, 46, 0.08);
+      }
+      .food-card h3 {
+        font-size: 16px;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+        color: var(--green);
+      }
+      .food-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .food {
+        background: #f4f1e8;
+        border-radius: 14px;
+        padding: 10px;
+        font-size: 12px;
+        font-weight: 700;
+        color: #555b56;
+      }
+      .float {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.76);
+        backdrop-filter: blur(18px);
+        border: 1px solid rgba(255, 255, 255, 0.86);
+        box-shadow: var(--shadow-soft);
+        border-radius: 24px;
+        padding: 17px;
+        z-index: 3;
+      }
+      .float.one {
+        left: 0;
+        top: 110px;
+        transform: rotate(4deg);
+      }
+      .float.two {
+        right: 8px;
+        bottom: 118px;
+        transform: rotate(-5deg);
+      }
+      .float b {
+        display: block;
+        color: var(--green);
+        font-size: 14px;
+        margin-bottom: 2px;
+      }
+      .float p {
+        font-size: 12px;
+        color: #6f746f;
+        max-width: 160px;
+      }
+
+      section {
+        padding: 92px 0;
+      }
+      .section-head {
+        max-width: 760px;
+        margin: 0 auto 54px;
+        text-align: center;
+      }
+      .kicker {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-weight: 900;
+        color: var(--green);
+        margin-bottom: 14px;
+      }
+      h2 {
+        font-size: clamp(36px, 5vw, 66px);
+        line-height: 0.98;
+        letter-spacing: -0.06em;
+        font-weight: 850;
+        margin-bottom: 18px;
+      }
+      .section-head p {
+        font-size: 18px;
+        color: #626861;
+        line-height: 1.65;
+      }
+
+      .trust-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: -36px;
+        position: relative;
+        z-index: 4;
+      }
+      .trust {
+        background: rgba(255, 253, 248, 0.72);
+        border: 1px solid rgba(255, 255, 255, 0.76);
+        box-shadow: var(--shadow-soft);
+        backdrop-filter: blur(16px);
+        border-radius: 24px;
+        padding: 22px;
+      }
+      .trust strong {
+        display: block;
+        font-size: 28px;
+        letter-spacing: -0.05em;
+        color: var(--green);
+        margin-bottom: 4px;
+      }
+      .trust span {
+        font-size: 13px;
+        color: #6f746f;
+        font-weight: 700;
+      }
+
+      .how {
+        background: linear-gradient(
+          180deg,
+          transparent,
+          rgba(255, 255, 255, 0.42),
+          transparent
+        );
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .card {
+        background: rgba(255, 253, 248, 0.78);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-radius: var(--r);
+        box-shadow: var(--shadow-soft);
+        padding: 28px;
+        position: relative;
+        overflow: hidden;
+      }
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          140deg,
+          rgba(255, 255, 255, 0.65),
+          transparent 45%
+        );
+        pointer-events: none;
+      }
+      .num {
+        width: 44px;
+        height: 44px;
+        border-radius: 16px;
+        background: var(--green);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-weight: 900;
+        margin-bottom: 22px;
+        position: relative;
+        z-index: 1;
+      }
+      .card h3 {
+        font-size: 23px;
+        letter-spacing: -0.04em;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+      }
+      .card p {
+        color: #626861;
+        font-size: 15px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .report {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 24px;
+        align-items: stretch;
+      }
+      .panel {
+        background: #101511;
+        color: #fff;
+        border-radius: var(--r2);
+        padding: 34px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        position: relative;
+      }
+      .panel::after {
+        content: "";
+        position: absolute;
+        right: -90px;
+        top: -90px;
+        width: 260px;
+        height: 260px;
+        background: rgba(184, 230, 201, 0.16);
+        border-radius: 50%;
+      }
+      .panel h2 {
+        font-size: 48px;
+        color: #fff;
+      }
+      .panel p {
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 17px;
+        margin-bottom: 26px;
+      }
+      .checklist {
+        list-style: none;
+        display: grid;
+        gap: 13px;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .checklist li {
+        display: flex;
+        gap: 10px;
+      }
+      .checklist li::before {
+        content: "✓";
+        color: var(--lime);
+        font-weight: 900;
+      }
+      .form-card {
+        background: rgba(255, 253, 248, 0.82);
+        border: 1px solid rgba(255, 255, 255, 0.85);
+        border-radius: var(--r2);
+        padding: 28px;
+        box-shadow: var(--shadow-soft);
+      }
+      .form-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22px;
+      }
+      .form-title h3 {
+        font-size: 25px;
+        letter-spacing: -0.04em;
+        color: var(--green);
+      }
+      .pill {
+        font-size: 12px;
+        font-weight: 900;
+        background: var(--mint);
+        color: var(--green);
+        padding: 8px 12px;
+        border-radius: 999px;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .field {
+        display: grid;
+        gap: 7px;
+      }
+      .field.full {
+        grid-column: 1/-1;
+      }
+      .field label {
+        font-size: 12px;
+        font-weight: 900;
+        color: #687069;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+      }
+      .field input,
+      .field select {
+        width: 100%;
+        border: 1px solid rgba(11, 59, 46, 0.12);
+        background: #fff;
+        border-radius: 16px;
+        padding: 14px 14px;
+        color: #202622;
+        outline: none;
+      }
+      .field input:focus,
+      .field select:focus {
+        border-color: var(--green);
+        box-shadow: 0 0 0 4px rgba(11, 59, 46, 0.08);
+      }
+      .form-note {
+        font-size: 12px;
+        color: #777d78;
+        margin: 16px 0 18px;
+      }
+      .form-btn {
+        width: 100%;
+        border: 0;
+        border-radius: 20px;
+        background: var(--green);
+        color: #fff;
+        padding: 16px;
+        font-weight: 900;
+        cursor: pointer;
+        box-shadow: 0 16px 34px rgba(11, 59, 46, 0.18);
+      }
+
+      .food-section {
+        background: #101511;
+        color: #fff;
+        border-radius: 56px;
+        margin: 0 3vw;
+        padding: 88px 0;
+        overflow: hidden;
+        position: relative;
+      }
+      .food-section::before {
+        content: "";
+        position: absolute;
+        inset: auto -10% -40% -10%;
+        height: 520px;
+        background: radial-gradient(
+          circle,
+          rgba(184, 230, 201, 0.2),
+          transparent 62%
+        );
+      }
+      .food-section .section-head h2,
+      .food-section .kicker {
+        color: #fff;
+      }
+      .food-section .section-head p {
+        color: rgba(255, 255, 255, 0.58);
+      }
+      .meal-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        position: relative;
+        z-index: 1;
+      }
+      .meal {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 28px;
+        padding: 24px;
+        min-height: 220px;
+      }
+      .meal .emoji {
+        font-size: 36px;
+        margin-bottom: 28px;
+      }
+      .meal h3 {
+        font-size: 20px;
+        margin-bottom: 9px;
+      }
+      .meal p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.58);
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        align-items: stretch;
+      }
+      .price {
+        background: rgba(255, 253, 248, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.86);
+        box-shadow: var(--shadow-soft);
+        border-radius: var(--r2);
+        padding: 30px;
+        position: relative;
+      }
+      .price.featured {
+        background: var(--green);
+        color: #fff;
+        transform: scale(1.03);
+        box-shadow: 0 30px 80px rgba(11, 59, 46, 0.25);
+      }
+      .tag {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-weight: 900;
+        color: #7a817b;
+        margin-bottom: 18px;
+      }
+      .featured .tag {
+        color: rgba(255, 255, 255, 0.56);
+      }
+      .price h3 {
+        font-size: 26px;
+        letter-spacing: -0.04em;
+        margin-bottom: 12px;
+      }
+      .money {
+        font-size: 52px;
+        letter-spacing: -0.07em;
+        font-weight: 900;
+        margin-bottom: 8px;
+      }
+      .money small {
+        font-size: 17px;
+        letter-spacing: 0;
+      }
+      .desc {
+        color: #656c66;
+        font-size: 14px;
+        margin-bottom: 22px;
+      }
+      .featured .desc {
+        color: rgba(255, 255, 255, 0.62);
+      }
+      .price ul {
+        list-style: none;
+        display: grid;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+      .price li {
+        font-size: 14px;
+        color: #3e4640;
+        font-weight: 600;
+        display: flex;
+        gap: 9px;
+      }
+      .price li::before {
+        content: "✓";
+        color: var(--green);
+        font-weight: 900;
+      }
+      .featured li {
+        color: rgba(255, 255, 255, 0.82);
+      }
+      .featured li::before {
+        color: var(--lime);
+      }
+      .price button {
+        width: 100%;
+        border-radius: 18px;
+        border: 1px solid rgba(11, 59, 46, 0.14);
+        background: #fff;
+        color: var(--green);
+        padding: 15px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+      .featured button {
+        background: #fff;
+        color: var(--green);
+        border: 0;
+      }
+
+      .doctor {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 22px;
+        align-items: center;
+      }
+      .doctor-card {
+        background: rgba(255, 253, 248, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.85);
+        box-shadow: var(--shadow-soft);
+        border-radius: var(--r2);
+        padding: 34px;
+      }
+      .avatar-row {
+        display: flex;
+        gap: 14px;
+        margin-top: 24px;
+      }
+      .avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, var(--green), var(--green2));
+        display: grid;
+        place-items: center;
+        color: #fff;
+        font-weight: 900;
+      }
+      .doctor-card h3 {
+        font-size: 29px;
+        letter-spacing: -0.04em;
+        color: var(--green);
+        margin-bottom: 10px;
+      }
+      .doctor-card p {
+        color: #626861;
+      }
+      .rules {
+        display: grid;
+        gap: 12px;
+      }
+      .rule {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: #fff;
+        border: 1px solid rgba(11, 59, 46, 0.08);
+        border-radius: 22px;
+        padding: 18px;
+      }
+      .rule-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 14px;
+        background: var(--mint);
+        display: grid;
+        place-items: center;
+      }
+      .rule b {
+        display: block;
+        color: #1d261f;
+      }
+      .rule span {
+        font-size: 13px;
+        color: #6b716c;
+      }
+
+      .final {
+        padding: 92px 0 120px;
+      }
+      .final-box {
+        text-align: center;
+        background: linear-gradient(135deg, #102018, #0b3b2e);
+        color: #fff;
+        border-radius: 58px;
+        padding: 76px 26px;
+        box-shadow: 0 34px 100px rgba(11, 59, 46, 0.25);
+        position: relative;
+        overflow: hidden;
+      }
+      .final-box::before {
+        content: "";
+        position: absolute;
+        inset: -30%;
+        background:
+          radial-gradient(
+            circle at 20% 10%,
+            rgba(255, 255, 255, 0.16),
+            transparent 34%
+          ),
+          radial-gradient(
+            circle at 90% 80%,
+            rgba(184, 230, 201, 0.16),
+            transparent 34%
+          );
+      }
+      .final-box h2 {
+        color: #fff;
+        position: relative;
+      }
+      .final-box p {
+        position: relative;
+        color: rgba(255, 255, 255, 0.66);
+        font-size: 18px;
+        max-width: 620px;
+        margin: 0 auto 28px;
+      }
+      .final-box .btn {
+        position: relative;
+        background: #fff;
+        color: var(--green);
+      }
+      footer {
+        padding: 34px 0 54px;
+        border-top: 1px solid var(--line);
+        color: #757b75;
+        font-size: 13px;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .disc {
+        max-width: 650px;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .reveal.show {
+        opacity: 1;
+        transform: none;
+      }
+      @media (max-width: 980px) {
+        .hero-grid,
+        .report,
+        .doctor {
+          grid-template-columns: 1fr;
+        }
+        .device {
+          min-height: 620px;
+        }
+        .trust-row,
+        .steps,
+        .pricing-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .meal-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .links {
+          display: none;
+        }
+        .float {
+          display: none;
+        }
+        .price.featured {
+          transform: none;
+        }
+      }
+      @media (max-width: 640px) {
+        .nav {
+          height: 58px;
+        }
+        .hero {
+          padding-top: 118px;
+        }
+        .hero-actions .btn {
+          width: 100%;
+        }
+        .trust-row,
+        .steps,
+        .pricing-grid,
+        .meal-grid,
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+        .phone {
+          transform: none;
+        }
+        .screen {
+          min-height: 570px;
+        }
+        .device {
+          min-height: 590px;
+        }
+        .food-section {
+          border-radius: 36px;
+          margin: 0;
+        }
+        .panel h2 {
+          font-size: 38px;
+        }
+        .foot {
+          display: grid;
+        }
+        .nav-cta {
+          padding: 10px 14px;
+        }
+        .brand {
+          font-size: 15px;
+        }
+      }
+
+      .consent {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: 12px;
+        color: #5f6761;
+        line-height: 1.45;
+        margin: 14px 0 0;
+      }
+      .consent input {
+        margin-top: 3px;
+        accent-color: var(--green);
+      }
+      .result-card {
+        display: none;
+        margin-top: 16px;
+        padding: 18px;
+        border-radius: 20px;
+        background: var(--mint);
+        color: var(--green);
+      }
+      .result-card.show {
+        display: block;
+      }
+      .result-card h4 {
+        margin-bottom: 6px;
+      }
+      .result-card p {
+        font-size: 13px;
+        color: #41524a;
+      }
+      .reviews-section {
+        padding: 34px 0 78px;
+      }
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 24px;
+      }
+      .review-card {
+        background: rgba(255, 253, 248, 0.78);
+        border: 1px solid rgba(20, 25, 20, 0.08);
+        border-radius: 26px;
+        padding: 24px;
+        box-shadow: var(--shadow-soft);
+      }
+      .review-stars {
+        letter-spacing: 2px;
+        font-size: 15px;
+        margin-bottom: 12px;
+      }
+      .review-card p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 18px;
+      }
+      .review-name {
+        font-weight: 800;
+        color: var(--green);
+      }
+      .review-label {
+        font-size: 11px;
+        color: #8a8f89;
+        margin-top: 3px;
+      }
+      .dietitian-contact {
+        margin-top: 18px;
+        padding: 15px 18px;
+        border: 1px solid rgba(20, 25, 20, 0.08);
+        border-radius: 18px;
+        background: rgba(255, 253, 248, 0.72);
+      }
+      .dietitian-contact b {
+        color: var(--green);
+      }
+      .dietitian-contact a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .doctor-contact {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .doctor-contact a {
+        font-weight: 800;
+        color: var(--green);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      @media (max-width: 850px) {
+        .reviews-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        background: rgba(12, 22, 17, 0.45);
+        backdrop-filter: blur(12px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .modal.show {
+        display: flex;
+      }
+      .modal-card {
+        width: min(720px, 94vw);
+        max-height: 90vh;
+        overflow: auto;
+        background: var(--paper);
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        border-radius: var(--r2);
+        padding: 30px;
+        box-shadow: 0 30px 100px rgba(10, 25, 17, 0.28);
+        position: relative;
+      }
+      .modal-close {
+        position: absolute;
+        right: 18px;
+        top: 18px;
+        width: 38px;
+        height: 38px;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        background: #fff;
+        cursor: pointer;
+      }
+      .modal-card h2 {
+        font-size: 34px;
+        letter-spacing: -0.05em;
+        color: var(--green);
+        margin-bottom: 8px;
+      }
+      .modal-card > p {
+        color: var(--muted);
+        margin-bottom: 22px;
+      }
+      .modal-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .modal-grid .full {
+        grid-column: 1/-1;
+      }
+      .modal-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 18px;
+      }
+      .modal-actions button {
+        flex: 1;
+        border: 0;
+        border-radius: 18px;
+        padding: 14px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+      .modal-primary {
+        background: var(--green);
+        color: #fff;
+      }
+      .modal-secondary {
+        background: #fff;
+        border: 1px solid var(--line) !important;
+        color: var(--green);
+      }
+      .review-note {
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: #fff7e8;
+        border: 1px solid rgba(201, 154, 69, 0.25);
+        font-size: 13px;
+        color: #5e4a27;
+        margin: 14px 0;
+      }
+      .faq {
+        display: grid;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .faq details {
+        background: rgba(255, 253, 248, 0.72);
+        border: 1px solid rgba(20, 25, 20, 0.08);
+        border-radius: 18px;
+        padding: 16px 18px;
+      }
+      .faq summary {
+        font-weight: 800;
+        cursor: pointer;
+        color: var(--green);
+      }
+      .faq p {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .footer-links {
+        display: inline-block;
+        margin-top: 8px;
+      }
+      .footer-links a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      @media (max-width: 640px) {
+        .modal-grid {
+          grid-template-columns: 1fr;
+        }
+        .modal-actions {
+          flex-direction: column;
+        }
+        .modal-card {
+          padding: 24px;
+        }
+        .modal-card h2 {
+          font-size: 30px;
+        }
+      }
+
+      /* Refined WhatsApp action */
+      .whatsapp-float {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 40;
+        width: 54px;
+        height: 54px;
+        border-radius: 18px;
+        display: grid;
+        place-items: center;
+        background: #25d366;
+        color: #fff;
+        box-shadow: 0 14px 34px rgba(11, 59, 46, 0.22);
+        border: 3px solid rgba(255, 255, 255, 0.9);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .whatsapp-float:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 40px rgba(11, 59, 46, 0.28);
+      }
+      .whatsapp-float svg {
+        width: 27px;
+        height: 27px;
+        display: block;
+        fill: currentColor;
+      }
+      .whatsapp-label {
+        position: fixed;
+        right: 86px;
+        bottom: 28px;
+        z-index: 39;
+        padding: 9px 13px;
+        border-radius: 999px;
+        background: rgba(255, 253, 248, 0.92);
+        border: 1px solid rgba(20, 25, 20, 0.08);
+        box-shadow: 0 10px 30px rgba(23, 32, 24, 0.1);
+        backdrop-filter: blur(14px);
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 800;
+      }
+      /* Elegant footer */
+      footer {
+        padding: 0 0 34px;
+        border-top: 0;
+        color: #757b75;
+        font-size: 13px;
+      }
+      .footer-shell {
+        width: min(1180px, 92vw);
+        margin: 0 auto;
+        border-top: 1px solid var(--line);
+        padding: 42px 0 0;
+      }
+      .footer-top {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 44px;
+        align-items: start;
+      }
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+      .footer-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 11px;
+        background: var(--green);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-size: 12px;
+        font-weight: 900;
+      }
+      .footer-brand-name {
+        font-size: 18px;
+        font-weight: 850;
+        letter-spacing: -0.04em;
+        color: var(--ink);
+      }
+      .footer-copy {
+        max-width: 500px;
+        color: #686f69;
+        line-height: 1.7;
+      }
+      .footer-person {
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        flex-wrap: wrap;
+      }
+      .footer-person strong {
+        color: var(--green);
+      }
+      .footer-person a {
+        color: var(--green);
+        font-weight: 800;
+        text-decoration: none;
+      }
+      .footer-person a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .footer-nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        flex-wrap: wrap;
+        padding-top: 4px;
+      }
+      .footer-nav a {
+        padding: 9px 13px;
+        border: 1px solid rgba(20, 25, 20, 0.08);
+        border-radius: 999px;
+        background: rgba(255, 253, 248, 0.72);
+        color: #4f5751;
+        font-weight: 700;
+        text-decoration: none;
+        transition: 0.2s ease;
+      }
+      .footer-nav a:hover {
+        border-color: rgba(11, 59, 46, 0.18);
+        color: var(--green);
+        background: #fff;
+      }
+      .footer-bottom {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(20, 25, 20, 0.07);
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        align-items: flex-start;
+      }
+      .footer-disclaimer {
+        max-width: 860px;
+        color: #858b85;
+        font-size: 11.5px;
+        line-height: 1.65;
+      }
+      .footer-note {
+        white-space: nowrap;
+        color: #9a9f99;
+        font-size: 11px;
+      }
+      @media (max-width: 700px) {
+        .whatsapp-label {
+          display: none;
+        }
+        .whatsapp-float {
+          right: 16px;
+          bottom: 16px;
+          width: 50px;
+          height: 50px;
+          border-radius: 16px;
+        }
+        .footer-top {
+          grid-template-columns: 1fr;
+          gap: 22px;
+        }
+        .footer-nav {
+          justify-content: flex-start;
+        }
+        .footer-bottom {
+          display: grid;
+        }
+        .footer-note {
+          white-space: normal;
+        }
+      }
+
+      /* Mobile-first launch polish */
+      @media (max-width: 640px) {
+        html,
+        body {
+          width: 100%;
+          min-width: 0;
+          overflow-x: hidden;
+        }
+        .wrap {
+          width: min(100% - 28px, 1180px);
+        }
+        .nav {
+          top: 10px;
+          width: calc(100% - 24px);
+          height: 54px;
+          padding: 0 10px 0 12px;
+          gap: 8px;
+        }
+        .brand {
+          gap: 8px;
+          font-size: 14px;
+          min-width: 0;
+        }
+        .mark {
+          width: 30px;
+          height: 30px;
+          border-radius: 10px;
+          font-size: 11px;
+        }
+        .nav-cta {
+          padding: 9px 13px;
+          font-size: 11px;
+          white-space: nowrap;
+        }
+        .hero {
+          min-height: auto;
+          padding: 98px 0 52px;
+        }
+        .hero-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          align-items: stretch;
+        }
+        .eyebrow {
+          font-size: 10.5px;
+          line-height: 1.35;
+          padding: 7px 10px;
+          margin-bottom: 18px;
+          max-width: 100%;
+        }
+        h1 {
+          font-size: clamp(42px, 13vw, 58px);
+          line-height: 0.94;
+          letter-spacing: -0.07em;
+          margin-bottom: 20px;
+        }
+        .hero-sub {
+          font-size: 16px;
+          line-height: 1.55;
+          margin-bottom: 24px;
+        }
+        .hero-actions {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 10px;
+          margin-bottom: 20px;
+        }
+        .btn {
+          width: 100%;
+          min-height: 52px;
+          padding: 14px 18px;
+          font-size: 14px;
+          white-space: normal;
+          text-align: center;
+        }
+        .micro {
+          gap: 8px;
+          font-size: 11px;
+          line-height: 1.35;
+        }
+        .device {
+          min-height: 560px;
+          width: 100%;
+          margin-top: 4px;
+          display: grid;
+          place-items: center;
+        }
+        .orb {
+          width: 82vw;
+          height: 82vw;
+          max-width: 360px;
+          max-height: 360px;
+        }
+        .phone {
+          width: min(86vw, 350px);
+          padding: 9px;
+          border-radius: 38px;
+          transform: none;
+        }
+        .screen {
+          min-height: 0;
+          padding: 24px 16px 18px;
+          border-radius: 30px;
+        }
+        .screen::before {
+          height: 21px;
+        }
+        .app-top {
+          margin-top: 11px;
+          margin-bottom: 18px;
+        }
+        .status {
+          font-size: 9px;
+          padding: 4px 7px;
+        }
+        .score-card {
+          padding: 20px;
+          border-radius: 24px;
+        }
+        .score {
+          font-size: 48px;
+        }
+        .score-text {
+          font-size: 12.5px;
+        }
+        .metric {
+          padding: 11px 12px;
+          border-radius: 15px;
+        }
+        .metric b,
+        .metric span {
+          font-size: 11.5px;
+        }
+        .food-card {
+          padding: 14px;
+          border-radius: 20px;
+        }
+        .food-card h3 {
+          font-size: 14px;
+          margin-bottom: 9px;
+        }
+        .food {
+          padding: 8px;
+          font-size: 10.5px;
+        }
+        section {
+          padding: 60px 0;
+        }
+        .section-head {
+          margin-bottom: 30px;
+        }
+        .kicker {
+          font-size: 10px;
+          letter-spacing: 0.13em;
+          margin-bottom: 10px;
+        }
+        h2 {
+          font-size: clamp(34px, 10vw, 46px);
+          line-height: 1;
+          margin-bottom: 14px;
+        }
+        .section-head p {
+          font-size: 15px;
+          line-height: 1.55;
+        }
+        .trust-row {
+          grid-template-columns: 1fr 1fr;
+          gap: 9px;
+          margin-top: -18px;
+        }
+        .trust {
+          padding: 16px;
+          border-radius: 18px;
+        }
+        .trust strong {
+          font-size: 21px;
+        }
+        .trust span {
+          font-size: 11px;
+        }
+        .steps,
+        .pricing-grid,
+        .meal-grid,
+        .report,
+        .doctor,
+        .reviews-grid {
+          grid-template-columns: 1fr;
+        }
+        .steps {
+          gap: 12px;
+        }
+        .card {
+          padding: 22px;
+          border-radius: 22px;
+        }
+        .num {
+          width: 38px;
+          height: 38px;
+          border-radius: 13px;
+          margin-bottom: 17px;
+        }
+        .card h3 {
+          font-size: 20px;
+        }
+        .card p {
+          font-size: 14px;
+          line-height: 1.55;
+        }
+        .report {
+          gap: 14px;
+        }
+        .panel,
+        .form-card,
+        .doctor-card {
+          padding: 22px;
+          border-radius: 28px;
+        }
+        .panel h2 {
+          font-size: 36px;
+        }
+        .panel p {
+          font-size: 15px;
+        }
+        .checklist {
+          font-size: 14px;
+        }
+        .form-title {
+          gap: 10px;
+          align-items: flex-start;
+        }
+        .form-title h3 {
+          font-size: 21px;
+        }
+        .pill {
+          font-size: 10px;
+          padding: 6px 9px;
+        }
+        input,
+        select,
+        textarea {
+          font-size: 16px !important;
+        }
+        .form-grid {
+          grid-template-columns: 1fr !important;
+          gap: 10px;
+        }
+        .price {
+          padding: 24px;
+          border-radius: 25px;
+        }
+        .price.featured {
+          transform: none;
+        }
+        .money {
+          font-size: 45px;
+        }
+        .price h3 {
+          font-size: 23px;
+        }
+        .doctor {
+          gap: 14px;
+        }
+        .doctor-card h3 {
+          font-size: 25px;
+        }
+        .rule {
+          padding: 15px;
+          border-radius: 18px;
+        }
+        .rule-icon {
+          width: 34px;
+          height: 34px;
+        }
+        .final {
+          padding: 58px 0 72px;
+        }
+        .final-box {
+          border-radius: 34px;
+          padding: 48px 20px;
+        }
+        .final-box h2 {
+          font-size: 38px;
+        }
+        .final-box p {
+          font-size: 15px;
+          line-height: 1.55;
+        }
+        .reviews-section {
+          padding: 20px 0 58px;
+        }
+        .review-card {
+          padding: 20px;
+          border-radius: 22px;
+        }
+        .modal {
+          padding: 12px;
+        }
+        .modal-card {
+          width: 100%;
+          max-height: 92vh;
+          padding: 20px;
+          border-radius: 28px;
+        }
+        .modal-card h2 {
+          font-size: 28px;
+        }
+        .modal-grid {
+          gap: 10px;
+        }
+        .modal-actions {
+          gap: 8px;
+        }
+        .whatsapp-float {
+          right: 14px;
+          bottom: 14px;
+          width: 48px;
+          height: 48px;
+          border-radius: 15px;
+        }
+        .whatsapp-float svg {
+          width: 24px;
+          height: 24px;
+        }
+        .footer-shell {
+          width: calc(100% - 28px);
+          padding-top: 28px;
+        }
+        .footer-top {
+          gap: 18px;
+        }
+        .footer-brand-name {
+          font-size: 17px;
+        }
+        .footer-copy {
+          font-size: 12.5px;
+        }
+        .footer-person {
+          font-size: 12px;
+          gap: 6px;
+          margin-top: 12px;
+        }
+        .footer-nav {
+          gap: 7px;
+        }
+        .footer-nav a {
+          padding: 8px 11px;
+          font-size: 11px;
+        }
+        .footer-bottom {
+          margin-top: 22px;
+          padding-top: 16px;
+          gap: 12px;
+        }
+        .footer-disclaimer {
+          font-size: 10.5px;
+          line-height: 1.6;
+        }
+        .footer-note {
+          font-size: 10px;
+        }
+      }
+      @media (max-width: 380px) {
+        .nav {
+          width: calc(100% - 16px);
+          padding-left: 9px;
+        }
+        .brand {
+          font-size: 13px;
+        }
+        .mark {
+          width: 28px;
+          height: 28px;
+        }
+        .nav-cta {
+          padding: 8px 10px;
+          font-size: 10px;
+        }
+        h1 {
+          font-size: 40px;
+        }
+        .hero-sub {
+          font-size: 15px;
+        }
+        .trust-row {
+          grid-template-columns: 1fr;
+        }
+        .device {
+          min-height: 520px;
+        }
+        .phone {
+          width: 92vw;
+        }
+        .screen {
+          padding: 22px 14px 16px;
+        }
+        .score {
+          font-size: 44px;
+        }
+        .footer-nav {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-nav a {
+          text-align: center;
+        }
+      }
+
+      /* Retain usable content, keyboard focus and intake states from the MVP. */
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 4px;
+      }
+      .result-card a {
+        display: inline-block;
+        margin-top: 12px;
+        text-decoration: underline;
+        font-weight: 800;
+      }
+      .launch-notice {
+        position: absolute;
+        top: 94px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(1180px, 92vw);
+        z-index: 3;
+        font-size: 12px;
+        color: var(--green);
+      }
+      [hidden] {
+        display: none !important;
+      }
+      .footer-nav a,
+      .review-label {
+        font-size: 14px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+      @media (max-width: 700px) {
+        .hero {
+          padding-top: 160px;
+        }
+      }
+
+      .brand-name {
+        display: grid;
+        gap: 1px;
+        line-height: 1.1;
+        white-space: nowrap;
+      }
+      .brand-name .brand-word {
+        color: var(--green);
+        font-size: 16px;
+      }
+      .brand-name .brand-expansion {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 400;
+        color: var(--red);
+        letter-spacing: -0.02em;
+      }
+      .brand .mark {
+        flex-shrink: 0;
+      }
+      .app-logo {
+        min-width: 0;
+        line-height: 1.2;
+      }
+      .app-top {
+        gap: 8px;
+      }
+      .status {
+        flex-shrink: 0;
+      }
+      .footer-domain {
+        display: inline-block;
+        margin-top: 8px;
+        color: var(--green);
+        font-size: 14px;
+      }
+      @media (max-width: 700px) {
+        .brand {
+          gap: 8px;
+        }
+        .brand-name .brand-word {
+          font-size: 14px;
+        }
+        .brand-name .brand-expansion {
+          font-size: 17px;
+        }
+        .app-logo {
+          font-size: 13px;
+        }
+      }
+
+      .brand-sugar {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-style: italic;
+        font-weight: 400;
+        color: var(--red);
+      }
+    </style>
+    <link rel="canonical" href="https://claritybs.in/" />
+    <meta
+      property="og:title"
+      content="Clarity Blood Sugar — Nutrition that fits real life"
+    />
+    <meta
+      property="og:description"
+      content="Report clarity and reviewed nutrition routines around familiar Indian food."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://claritybs.in/" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%229%22%20fill%3D%22%230b3b2e%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2221%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20font-weight%3D%22bold%22%20fill%3D%22%23fffdf8%22%3EBS%3C%2Ftext%3E%3C%2Fsvg%3E"
+    />
+  </head>
+  <body>
+    <div class="grain"></div>
+
+    <p id="launchNotice" class="launch-notice" role="status">
+      Checking service availability…
+    </p>
+    <noscript
+      ><p>
+        Online intake needs JavaScript. You can enquire using the WhatsApp
+        contact link.
+      </p></noscript
+    >
+    <nav class="nav">
+      <a href="#top" class="brand" aria-label="Clarity Blood Sugar"
+        ><div class="mark">BS</div>
+        <div class="brand-name">
+          <span class="brand-word">Clarity</span
+          ><span class="brand-expansion">Blood Sugar</span>
+        </div></a
+      >
+      <div class="links">
+        <a href="#how">How it works</a>
+        <a href="#food">Everyday nutrition</a>
+        <a href="#pricing">Plans</a>
+        <a href="#safety">Safety</a>
+      </div>
+      <button class="nav-cta" onclick="openIntake('report')">
+        Request free review
+      </button>
+    </nav>
+
+    <main id="top">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="reveal">
+            <div class="eyebrow">
+              <span class="pulse"></span> Indian food · Everyday routines ·
+              Human support
+            </div>
+            <h1>
+              Understand your numbers.
+              <span class="serif">Eat your way.</span> Find your balance.
+            </h1>
+            <p class="hero-sub">
+              From understanding a sugar report to building healthier everyday
+              habits, Clarity Blood Sugar helps you take a practical next
+              step—with nutrition guidance shaped around your food preferences,
+              routine, and goals.
+            </p>
+            <div class="hero-actions">
+              <button
+                class="btn btn-primary"
+                onclick="openEnquiry('Nutrition support')"
+              >
+                Request nutrition support →
+              </button>
+              <button
+                class="btn btn-secondary"
+                onclick="openEnquiry('General Diet support')"
+              >
+                Register interest →
+              </button>
+            </div>
+            <div class="micro">
+              <span>No diagnosis claims</span>
+              <span>Human review when needed</span>
+              <span>Built for Indian meals</span>
+            </div>
+          </div>
+
+          <div class="device reveal">
+            <div class="orb"></div>
+            <div class="float one">
+              <b>HbA1c explained</b>
+              <p>
+                Understand what the values in your report mean and what
+                questions to discuss with a healthcare professional.
+              </p>
+            </div>
+            <div class="float two">
+              <b>Dietitian review</b>
+              <p>
+                Your plan is practical for rice, tiffin, chai and office meals.
+              </p>
+            </div>
+            <div class="phone">
+              <div class="screen">
+                <div class="app-top">
+                  <div class="app-logo">
+                    Clarity <span class="brand-sugar">Blood Sugar</span>
+                  </div>
+                  <div class="status">Sample preview</div>
+                </div>
+                <div class="score-card">
+                  <div class="score-label">Sample report</div>
+                  <div class="score">6.4<small>%</small></div>
+                  <div class="score-text">
+                    Example only. Review status is shown without diagnosing or
+                    promising an outcome.
+                  </div>
+                </div>
+                <div class="metric-list">
+                  <div class="metric">
+                    <b>Fasting Sugar</b><span>118 mg/dL</span>
+                  </div>
+                  <div class="metric">
+                    <b>Post-meal Sugar</b><span>176 mg/dL</span>
+                  </div>
+                  <div class="metric">
+                    <b>Review status</b><span>Human review</span>
+                  </div>
+                </div>
+                <div class="food-card">
+                  <h3>Small steps for today</h3>
+                  <div class="food-grid">
+                    <div class="food">2 idli + sambar</div>
+                    <div class="food">Roti + dal + vegetables</div>
+                    <div class="food">Curd + vegetables</div>
+                    <div class="food">Idli / dosa + protein</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="wrap trust-row reveal">
+        <div class="trust">
+          <strong>Report clarity</strong
+          ><span>simple, supported explanations</span>
+        </div>
+        <div class="trust">
+          <strong>₹299</strong><span>14-day food routine</span>
+        </div>
+        <div class="trust">
+          <strong>30 days</strong><span>dietitian-guided plan</span>
+        </div>
+        <div class="trust">
+          <strong>Indian meals</strong><span>familiar food examples</span>
+        </div>
+      </div>
+
+      <section class="how" id="how">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="kicker">How it works</div>
+            <h2>Start where you are. Build what fits.</h2>
+            <p>
+              Whether you have a sugar report or simply want healthier everyday
+              eating, Clarity Blood Sugar turns your starting point into a
+              practical next step.
+            </p>
+          </div>
+          <div class="steps">
+            <div class="card reveal">
+              <div class="num">1</div>
+              <h3>Tell us where you are</h3>
+              <p>
+                Share your report, goal, food preferences, routine and the
+                details needed to understand your starting point.
+              </p>
+            </div>
+            <div class="card reveal">
+              <div class="num">2</div>
+              <h3>Understand your needs</h3>
+              <p>
+                We identify what needs explanation, what needs professional
+                review, and which practical food choices fit your context.
+              </p>
+            </div>
+            <div class="card reveal">
+              <div class="num">3</div>
+              <h3>Build your routine</h3>
+              <p>
+                Receive a reviewed food routine, practical substitutions and the
+                follow-up included in your chosen plan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="decode">
+        <div class="wrap report">
+          <div class="panel reveal">
+            <h2>Start with your numbers.</h2>
+            <p>
+              A practitioner reviews the values you enter and prepares an
+              explanation and questions for your doctor. It is educational
+              guidance, not a medical diagnosis.
+            </p>
+            <ul class="checklist">
+              <li>HbA1c explained in context</li>
+              <li>Fasting and post-meal values checked in context</li>
+              <li>Supported sugar values explained</li>
+              <li>Uncertainties identified clearly</li>
+              <li>Questions to discuss with a healthcare professional</li>
+            </ul>
+          </div>
+          <div class="form-card reveal">
+            <div class="form-title">
+              <h3>Free Sugar Report Review</h3>
+              <span class="pill">No card needed</span>
+            </div>
+            <form id="reportForm" onsubmit="submitIntake(event, 'inline')">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="inName">Your name</label
+                  ><input
+                    id="inName"
+                    autocomplete="name"
+                    minlength="2"
+                    maxlength="80"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="inPhone">Phone</label
+                  ><input
+                    id="inPhone"
+                    type="tel"
+                    autocomplete="tel"
+                    placeholder="+91XXXXXXXXXX"
+                    pattern="\+91[6-9][0-9]{9}"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="inAge">Age · 18+</label
+                  ><input
+                    id="inAge"
+                    type="number"
+                    min="18"
+                    max="110"
+                    step="1"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="inA1c">HbA1c · %</label
+                  ><input
+                    id="inA1c"
+                    type="number"
+                    min="2"
+                    max="25"
+                    step="0.1"
+                    placeholder="Optional, e.g. 6.4"
+                  />
+                </div>
+                <div class="field">
+                  <label for="inFbs">Fasting sugar · mg/dL</label
+                  ><input
+                    id="inFbs"
+                    type="number"
+                    min="20"
+                    max="1000"
+                    step="0.1"
+                    placeholder="Optional"
+                  />
+                </div>
+                <div class="field">
+                  <label for="inPpbs">Post-meal sugar · mg/dL</label
+                  ><input
+                    id="inPpbs"
+                    type="number"
+                    min="20"
+                    max="1000"
+                    step="0.1"
+                    placeholder="Optional"
+                  />
+                </div>
+                <div class="field full">
+                  <label for="inScreen">Health screening</label
+                  ><select id="inScreen" required>
+                    <option value="">Choose one</option>
+                    <option value="clear">
+                      No known medical condition, regular medication, pregnancy
+                      or eating-disorder concern
+                    </option>
+                    <option value="review">
+                      I have a medical condition, regular medication, pregnancy
+                      or an eating-disorder concern
+                    </option>
+                    <option value="urgent">
+                      I have severe or worsening symptoms and need urgent
+                      medical help
+                    </option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="inNotes">Report context · optional</label
+                  ><input
+                    id="inNotes"
+                    maxlength="2000"
+                    placeholder="Date, timing or questions for the reviewer"
+                  />
+                </div>
+              </div>
+              <p class="form-note">
+                Enter at least one value exactly as printed. Glucose must use
+                mg/dL. This service is not monitored for emergencies.
+              </p>
+              <label class="consent"
+                ><input id="inConsent" type="checkbox" required /><span
+                  >I consent to processing my details for this requested service
+                  under the
+                  <a
+                    href="#privacy"
+                    onclick="
+                      openInfo('privacy');
+                      return false;
+                    "
+                    >privacy notice</a
+                  >.</span
+                ></label
+              ><label class="consent"
+                ><input id="inWhatsApp" type="checkbox" /><span
+                  >I want optional WhatsApp service reminders. I can turn these
+                  off in my private portal or reply STOP.</span
+                ></label
+              >
+              <div class="modal-actions">
+                <button class="modal-primary" type="submit" disabled>
+                  Request free review →
+                </button>
+              </div>
+              <div
+                class="result-card"
+                id="inlineResult"
+                role="status"
+                aria-live="polite"
+              ></div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="food-section" id="food">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="kicker">Everyday nutrition</div>
+            <h2>Good nutrition should fit your life.</h2>
+            <p>
+              Good routines work better when they fit home meals, breakfast
+              habits, tea and snacks, eating out, and busy work schedules.
+            </p>
+          </div>
+          <div class="meal-grid">
+            <div class="meal reveal">
+              <div class="emoji">🍚</div>
+              <h3>Home meals</h3>
+              <p>
+                Practical combinations for rice or roti, dal, vegetables, curd,
+                paneer and eggs.
+              </p>
+            </div>
+            <div class="meal reveal">
+              <div class="emoji">🥞</div>
+              <h3>Breakfast</h3>
+              <p>
+                Familiar options such as idli, dosa, upma or eggs, shaped around
+                your routine and preferences.
+              </p>
+            </div>
+            <div class="meal reveal">
+              <div class="emoji">☕</div>
+              <h3>Tea &amp; snacks</h3>
+              <p>
+                Practical choices for chai, coffee, biscuits, fruit, curd and
+                evening hunger.
+              </p>
+            </div>
+            <div class="meal reveal">
+              <div class="emoji">🚶</div>
+              <h3>Busy schedules</h3>
+              <p>
+                Simple ways to plan meals, protein and substitutions around
+                work, travel and changing days.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="kicker">Plans</div>
+            <h2>Start free. Upgrade only when ready.</h2>
+            <p>
+              Choose the level of support that matches what you need today. Only
+              services and follow-up we can actually deliver are shown.
+            </p>
+          </div>
+          <div class="pricing-grid">
+            <div class="price reveal">
+              <div class="tag">₹0</div>
+              <h3>Sugar Report Clarity</h3>
+              <div class="money">₹0</div>
+              <p class="desc">
+                For people who want to understand their sugar report first.
+              </p>
+              <ul>
+                <li>Supported sugar values explained</li>
+                <li>Uncertainties identified</li>
+                <li>Questions for your healthcare professional</li>
+                <li>No diagnosis or medication changes</li>
+              </ul>
+              <button onclick="openEnquiry('Sugar Report Clarity')">
+                Request nutrition support
+              </button>
+            </div>
+            <div class="price featured reveal">
+              <div class="tag">14 days</div>
+              <h3>14-Day Food Routine</h3>
+              <div class="money">₹299</div>
+              <p class="desc">
+                General nutrition or sugar-aware support shaped around food
+                preferences, practical substitutions, a habit tracker, and a
+                defined review.
+              </p>
+              <ul>
+                <li>Reviewed food routine</li>
+                <li>Practical food substitutions</li>
+                <li>Habit tracker</li>
+                <li>Defined review</li>
+                <li>Follow-up included in the plan</li>
+              </ul>
+              <button onclick="openEnquiry('14-Day Food Routine')">
+                Register interest
+              </button>
+            </div>
+            <div class="price reveal">
+              <div class="tag">30 days</div>
+              <h3>30-Day Dietitian Support</h3>
+              <div class="money">₹999<small>+</small></div>
+              <p class="desc">
+                Personalised routine from ₹999, with agreed check-ins and
+                progress review. Any additional support beyond the base scope is
+                explained and agreed before it begins.
+              </p>
+              <ul>
+                <li>Personalised food routine</li>
+                <li>Agreed check-ins</li>
+                <li>Progress review</li>
+                <li>Support scope and any additional fee agreed upfront</li>
+                <li>Professional approval before your routine is released</li>
+              </ul>
+              <button onclick="openEnquiry('30-Day Dietitian Support')">
+                Register interest
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="kicker">FAQ</div>
+            <h2>Clear answers before you start.</h2>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>What do I need for Sugar Report Clarity?</summary>
+              <p>
+                Use a recent report with the supported values you want
+                explained. Clarity Blood Sugar explains what is provided,
+                identifies uncertainty, and gives questions to discuss with a
+                healthcare professional.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Is every personalised routine reviewed by a dietitian?
+              </summary>
+              <p>
+                Personalised routines are released only after a qualified
+                practitioner reviews and approves them. Your private portal
+                shows the reviewer and approved plan version.
+              </p>
+            </details>
+            <details>
+              <summary>How quickly will I receive support?</summary>
+              <p>
+                Turnaround is confirmed with you before support begins, based on
+                the selected service and current availability. You can enquire
+                on WhatsApp before committing.
+              </p>
+            </details>
+            <details>
+              <summary>What happens to my data?</summary>
+              <p>
+                Your submission requires explicit consent. Use the privacy and
+                data-deletion links in the footer to understand handling and
+                request deletion.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="safety">
+        <div class="wrap doctor">
+          <div class="doctor-card reveal">
+            <div class="kicker">Trust model</div>
+            <h2>Dietitian-supported. Safety-first.</h2>
+            <p>
+              Clarity Blood Sugar should never replace medical care. It helps
+              people understand supported report values, make practical food
+              choices, and enter professional review when their situation needs
+              it.
+            </p>
+            <div class="avatar-row">
+              <div class="avatar">BS</div>
+            </div>
+            <div class="dietitian-contact">
+              <b>Dietitian / Nutritionist: Bavitha Sri</b><br />
+              <span
+                >Public-launch enquiries and follow-up:
+                <a
+                  href="https://wa.me/919848713385"
+                  target="_blank"
+                  rel="noopener"
+                  >WhatsApp 9848713385</a
+                ></span
+              ><br />
+              <span
+                >Turnaround is confirmed before support begins. Check-ins and
+                adjustment scope are agreed as part of the selected plan.</span
+              >
+            </div>
+          </div>
+          <div class="rules reveal">
+            <div class="rule">
+              <div class="rule-icon">🚩</div>
+              <div>
+                <b>Health concerns receive professional review</b
+                ><span
+                  >Pregnancy, medical conditions, regular medication,
+                  eating-disorder concerns, concerning symptoms, or other
+                  flagged answers trigger professional review before a
+                  personalised routine is provided.</span
+                >
+              </div>
+            </div>
+            <div class="rule">
+              <div class="rule-icon">💊</div>
+              <div>
+                <b>No medicine changes</b
+                ><span
+                  >The platform does not stop, start or adjust diabetes
+                  medication. That stays with the doctor.</span
+                >
+              </div>
+            </div>
+            <div class="rule">
+              <div class="rule-icon">🥗</div>
+              <div>
+                <b>Food and lifestyle scope</b
+                ><span
+                  >Your dietitian focuses on meals, portions, routines, tracking
+                  and adherence.</span
+                >
+              </div>
+            </div>
+            <div class="rule">
+              <div class="rule-icon">🔒</div>
+              <div>
+                <b>Consent and privacy</b
+                ><span
+                  >Reports and health inputs need clear consent, secure storage
+                  and easy deletion.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews-section" id="reviews">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="kicker">Feedback</div>
+            <h2>Small changes should feel practical.</h2>
+          </div>
+          <div class="reviews-grid">
+            <article class="review-card reveal">
+              <div class="review-stars" aria-label="4 out of 5 stars">
+                ★★★★☆
+              </div>
+              <p>
+                “The explanation was simple and helped me understand what
+                questions to ask before changing anything in my routine.”
+              </p>
+              <div class="review-name">Srikanth</div>
+            </article>
+            <article class="review-card reveal">
+              <div class="review-stars" aria-label="4 out of 5 stars">
+                ★★★★☆
+              </div>
+              <p>
+                “I liked that the food suggestions felt realistic for everyday
+                Indian meals instead of giving me a completely different diet.”
+              </p>
+              <div class="review-name">Uday</div>
+            </article>
+            <article class="review-card reveal">
+              <div class="review-stars" aria-label="4 out of 5 stars">
+                ★★★★☆
+              </div>
+              <p>
+                “The routine was easy to understand, and having practical
+                substitutions made it easier to stay consistent.”
+              </p>
+              <div class="review-name">Priya</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="final">
+        <div class="wrap">
+          <div class="final-box reveal">
+            <h2>Start with clarity. Build a routine that fits.</h2>
+            <p>
+              Begin with a sugar report or your everyday nutrition goal, then
+              choose the practical level of support that fits your needs.
+            </p>
+            <button class="btn" onclick="openEnquiry('Nutrition support')">
+              Request nutrition support →
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div
+      class="modal"
+      id="intakeModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="intakeTitle"
+    >
+      <div class="modal-card">
+        <button class="modal-close" onclick="closeIntake()" aria-label="Close">
+          ×
+        </button>
+        <div id="reportIntake">
+          <div class="kicker">Sugar report</div>
+          <h2 id="intakeTitle">Understand your sugar report.</h2>
+          <p>
+            Start with the report you already have. We collect only what is
+            needed to explain supported values and decide whether professional
+            review is required.
+          </p>
+          <form id="reportIntakeForm" onsubmit="submitIntake(event, 'report')">
+            <div class="modal-grid">
+              <div class="field">
+                <label for="riName">Your name</label
+                ><input
+                  id="riName"
+                  autocomplete="name"
+                  minlength="2"
+                  maxlength="80"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="riPhone">Phone</label
+                ><input
+                  id="riPhone"
+                  type="tel"
+                  autocomplete="tel"
+                  placeholder="+91XXXXXXXXXX"
+                  pattern="\+91[6-9][0-9]{9}"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="riAge">Age · 18+</label
+                ><input
+                  id="riAge"
+                  type="number"
+                  min="18"
+                  max="110"
+                  step="1"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="riA1c">HbA1c · %</label
+                ><input
+                  id="riA1c"
+                  type="number"
+                  min="2"
+                  max="25"
+                  step="0.1"
+                  placeholder="Optional, e.g. 6.4"
+                />
+              </div>
+              <div class="field">
+                <label for="riFbs">Fasting sugar · mg/dL</label
+                ><input
+                  id="riFbs"
+                  type="number"
+                  min="20"
+                  max="1000"
+                  step="0.1"
+                  placeholder="Optional"
+                />
+              </div>
+              <div class="field">
+                <label for="riPpbs">Post-meal sugar · mg/dL</label
+                ><input
+                  id="riPpbs"
+                  type="number"
+                  min="20"
+                  max="1000"
+                  step="0.1"
+                  placeholder="Optional"
+                />
+              </div>
+              <div class="field full">
+                <label for="riScreen">Health screening</label
+                ><select id="riScreen" required>
+                  <option value="">Choose one</option>
+                  <option value="clear">
+                    No known medical condition, regular medication, pregnancy or
+                    eating-disorder concern
+                  </option>
+                  <option value="review">
+                    I have a medical condition, regular medication, pregnancy or
+                    an eating-disorder concern
+                  </option>
+                  <option value="urgent">
+                    I have severe or worsening symptoms and need urgent medical
+                    help
+                  </option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="riNotes">Report context · optional</label
+                ><input
+                  id="riNotes"
+                  maxlength="2000"
+                  placeholder="Date, timing or questions for the reviewer"
+                />
+              </div>
+            </div>
+            <p class="form-note">
+              Enter at least one value exactly as printed. Glucose must use
+              mg/dL. This service is not monitored for emergencies.
+            </p>
+            <label class="consent"
+              ><input id="riConsent" type="checkbox" required /><span
+                >I consent to processing my details for this requested service
+                under the
+                <a
+                  href="#privacy"
+                  onclick="
+                    openInfo('privacy');
+                    return false;
+                  "
+                  >privacy notice</a
+                >.</span
+              ></label
+            ><label class="consent"
+              ><input id="riWhatsApp" type="checkbox" /><span
+                >I want optional WhatsApp service reminders. I can turn these
+                off in my private portal or reply STOP.</span
+              ></label
+            >
+            <div class="modal-actions">
+              <button class="modal-primary" type="submit" disabled>
+                Request free review →
+              </button>
+            </div>
+            <div
+              class="result-card"
+              id="reportResult"
+              role="status"
+              aria-live="polite"
+            ></div>
+          </form>
+        </div>
+
+        <div id="dietIntake" style="display: none">
+          <div class="kicker">General diet</div>
+          <h2 id="dietIntakeTitle">Build a routine around your real life.</h2>
+          <p>
+            No report is required. This journey is for adults seeking healthier
+            everyday eating, weight management, healthy weight gain, or protein
+            and fitness support.
+          </p>
+          <p>
+            We collect your goal, age, relevant measurements, food preference,
+            allergies, daily routine, and a short health screening. Your chosen
+            plan provides a reviewed food routine, practical substitutions, and
+            the follow-up included in that plan.
+          </p>
+          <form id="dietForm" onsubmit="submitIntake(event, 'diet')">
+            <div class="modal-grid">
+              <div class="field">
+                <label for="diName">Your name</label
+                ><input
+                  id="diName"
+                  autocomplete="name"
+                  minlength="2"
+                  maxlength="80"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="diPhone">Phone</label
+                ><input
+                  id="diPhone"
+                  type="tel"
+                  autocomplete="tel"
+                  placeholder="+91XXXXXXXXXX"
+                  pattern="\+91[6-9][0-9]{9}"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="diAge">Age · 18+</label
+                ><input
+                  id="diAge"
+                  type="number"
+                  min="18"
+                  max="110"
+                  step="1"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="diGoal">Goal</label
+                ><select id="diGoal" required>
+                  <option value="">Choose a goal</option>
+                  <option>Healthier everyday eating</option>
+                  <option>Weight management</option>
+                  <option>Healthy weight gain</option>
+                  <option>Protein &amp; fitness support</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="diMeasurements">Measurements · optional</label
+                ><input
+                  id="diMeasurements"
+                  maxlength="500"
+                  placeholder="Height cm / weight kg"
+                />
+              </div>
+              <div class="field">
+                <label for="diFood">Food preference</label
+                ><input
+                  id="diFood"
+                  maxlength="500"
+                  required
+                  placeholder="Vegetarian, eggs, non-vegetarian…"
+                />
+              </div>
+              <div class="field">
+                <label for="diAllergies">Allergies / intolerances</label
+                ><input
+                  id="diAllergies"
+                  maxlength="500"
+                  required
+                  placeholder="None, or list them"
+                />
+              </div>
+              <div class="field">
+                <label for="diRoutine">Daily routine</label
+                ><input
+                  id="diRoutine"
+                  maxlength="1000"
+                  required
+                  placeholder="Work, meals, sleep and activity"
+                />
+              </div>
+              <div class="field full">
+                <label for="diScreen">Health screening</label
+                ><select id="diScreen" required>
+                  <option value="">Choose one</option>
+                  <option value="clear">
+                    No known medical condition, regular medication, pregnancy or
+                    eating-disorder concern
+                  </option>
+                  <option value="review">
+                    I have a medical condition, regular medication, pregnancy or
+                    an eating-disorder concern
+                  </option>
+                  <option value="urgent">
+                    I have severe or worsening symptoms and need urgent medical
+                    help
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="review-note">
+              A practitioner checks suitability and approves your routine before
+              payment is available. Severe or worsening symptoms need urgent
+              medical care.
+            </div>
+            <label class="consent"
+              ><input id="diConsent" type="checkbox" required /><span
+                >I consent to processing my details for this requested service
+                under the
+                <a
+                  href="#privacy"
+                  onclick="
+                    openInfo('privacy');
+                    return false;
+                  "
+                  >privacy notice</a
+                >.</span
+              ></label
+            ><label class="consent"
+              ><input id="diWhatsApp" type="checkbox" /><span
+                >I want optional WhatsApp service reminders. I can turn these
+                off in my private portal or reply STOP.</span
+              ></label
+            >
+            <div class="modal-actions">
+              <button class="modal-primary" type="submit" disabled>
+                Request suitability review →</button
+              ><button
+                type="button"
+                class="modal-secondary"
+                onclick="closeIntake()"
+              >
+                Cancel
+              </button>
+            </div>
+            <div
+              class="result-card"
+              id="dietResult"
+              role="status"
+              aria-live="polite"
+            ></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal"
+      id="infoModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="infoTitle"
+    >
+      <div class="modal-card">
+        <button class="modal-close" onclick="closeInfo()" aria-label="Close">
+          ×
+        </button>
+        <div id="infoContent"></div>
+      </div>
+    </div>
+
+    <a
+      class="whatsapp-label"
+      href="https://wa.me/919848713385?text=Hi%20Bavitha%2C%20I%27d%20like%20to%20request%20nutrition%20support%20from%20Clarity%20Blood%20Sugar."
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat with Bavitha Sri on WhatsApp"
+      >Chat on WhatsApp</a
+    >
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/919848713385?text=Hi%20Bavitha%2C%20I%27d%20like%20to%20request%20nutrition%20support%20from%20Clarity%20Blood%20Sugar."
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat with Bavitha Sri on WhatsApp"
+    >
+      <svg viewbox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M16 3.2A12.7 12.7 0 0 0 5.1 22.4L3.4 28.8l6.6-1.7A12.7 12.7 0 1 0 16 3.2Zm0 22.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.3 10.3 0 1 1 16 25.9Zm5.8-7.7c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.4 5.3 4.8.7.3 1.3.5 1.8.6.8.2 1.4.2 2 .1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"
+        ></path>
+      </svg>
+    </a>
+
+    <footer>
+      <div class="footer-shell">
+        <div class="footer-top">
+          <div>
+            <div class="footer-brand">
+              <div class="footer-mark">BS</div>
+              <div class="footer-brand-name">
+                Clarity <span class="brand-sugar">Blood Sugar</span>
+              </div>
+            </div>
+            <div class="footer-copy">
+              Practical nutrition and follow-up support for everyday life.
+              <br /><span class="footer-domain">claritybs.in</span>
+            </div>
+            <div class="footer-person">
+              <span>Dietitian / Nutritionist</span><strong>Bavitha Sri</strong
+              ><span>·</span><a href="tel:+919848713385">9848713385</a>
+            </div>
+          </div>
+          <nav class="footer-nav" aria-label="Footer">
+            <a
+              href="#privacy"
+              onclick="
+                openInfo('privacy');
+                return false;
+              "
+              >Privacy</a
+            >
+            <a
+              href="#terms"
+              onclick="
+                openInfo('terms');
+                return false;
+              "
+              >Terms</a
+            >
+            <a
+              href="#contact"
+              onclick="
+                openInfo('contact');
+                return false;
+              "
+              >Contact</a
+            >
+            <a
+              href="#deletion"
+              onclick="
+                openInfo('deletion');
+                return false;
+              "
+              >Data deletion</a
+            >
+            <a href="/portal">My portal</a
+            ><a href="/app">Practitioner sign-in</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-disclaimer">
+            Educational wellness support only. Not a diagnosis, treatment,
+            prescription, or replacement for a qualified doctor. People with
+            high-risk values, symptoms, pregnancy, insulin use, kidney disease,
+            or complications should consult a doctor immediately.
+          </div>
+          <div class="footer-note">
+            Indian food · Everyday routines · Human support
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/landing.js" defer></script>
+  </body>
+</html>

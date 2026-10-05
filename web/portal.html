@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Clarity Blood Sugar · My private portal</title>
+    <link rel="stylesheet" href="/assets/app.css" />
+    <script src="/assets/common.js" defer></script>
+    <script src="/assets/portal.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/">Clarity <span>Blood Sugar</span></a>
+      <nav>
+        <button id="refreshPortal" class="secondary">Refresh</button
+        ><button id="forgetDevice" class="secondary">Clear this device</button>
+      </nav>
+    </header>
+    <main class="shell private">
+      <p class="muted">YOUR PRIVATE PORTAL</p>
+      <h1 id="welcome">Your next step, made clear.</h1>
+      <p>
+        Keep your access link private. Save it somewhere safe before leaving
+        this device.
+      </p>
+      <div id="message" class="notice" role="status" aria-live="polite"></div>
+      <section id="accessPanel" class="card" hidden>
+        <h2>Open your access link</h2>
+        <form id="accessForm">
+          <label for="accessLink"
+            >Private access link<input
+              id="accessLink"
+              autocomplete="off"
+              required /></label
+          ><button type="submit">Open my case</button>
+        </form>
+        <p class="muted">
+          Lost your link? Contact support to verify your identity.
+        </p>
+      </section>
+      <section id="patientPanel" hidden>
+        <div class="card">
+          <span id="status" class="badge"></span>
+          <h2 id="product"></h2>
+          <p id="caseId" class="muted"></p>
+          <p id="reviewNote"></p>
+          <p id="paymentStatus"></p>
+          <button id="payButton" hidden>Pay for approved support</button>
+          <div class="actions">
+            <button id="copyLink" class="secondary">
+              Copy my private access link
+            </button>
+          </div>
+        </div>
+        <div id="planPanel" class="card" hidden>
+          <h2>Your reviewed plan</h2>
+          <div id="plan" class="plan-text"></div>
+          <p id="signature" class="signature muted"></p>
+        </div>
+        <div id="checkinPanel" class="card" hidden>
+          <h2>A small check-in.</h2>
+          <p class="muted">
+            Severe or worsening symptoms need urgent medical care. This inbox is
+            not monitored for emergencies.
+          </p>
+          <p id="completed" class="muted"></p>
+          <form id="checkinForm">
+            <label for="day"
+              >Due check-in<select id="day" required></select></label
+            ><label for="adherence"
+              >How is your routine going?<select id="adherence">
+                <option value="going_well">Going well</option>
+                <option value="some_difficulty">Some difficulty</option>
+                <option value="need_help">I need practitioner help</option>
+              </select></label
+            ><label for="checkinNote"
+              >Anything to share? · optional<textarea
+                id="checkinNote"
+                maxlength="1500"
+              ></textarea></label
+            ><button type="submit">Save my check-in</button>
+          </form>
+          <p id="nextCheckin" class="muted"></p>
+        </div>
+        <div id="feedbackPanel" class="card" hidden>
+          <h2>Your check-in feedback</h2>
+          <div id="feedbackHistory"></div>
+        </div>
+        <div class="card">
+          <h2>Your preferences and data</h2>
+          <form id="preferenceForm">
+            <label class="check" for="whatsappOptIn"
+              ><input id="whatsappOptIn" type="checkbox" />Send optional
+              WhatsApp service reminders. I can reply STOP or turn these off
+              here.</label
+            ><button type="submit" class="secondary">Save preference</button>
+          </form>
+          <p class="muted">
+            Reminders need verified contact and a configured messaging service.
+            Keep your saved private access link.
+          </p>
+          <p id="expiry" class="muted"></p>
+          <button id="deleteData" class="danger">Delete my data</button>
+        </div>
+      </section>
+      <p id="support" class="muted"></p>
+    </main>
+    <footer>
+      Nutrition support complements medical care. No medication changes are made
+      here.
+    </footer>
+  </body>
+</html>

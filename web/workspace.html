@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Clarity Blood Sugar · Practitioner workspace</title>
+    <link rel="stylesheet" href="/assets/app.css" />
+    <script src="/assets/common.js" defer></script>
+    <script src="/assets/workspace.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/">Clarity <span>Blood Sugar</span></a>
+      <nav>
+        <span id="signedInAs" class="muted"></span
+        ><button id="refresh" class="secondary" hidden>Refresh</button
+        ><button id="logout" class="secondary" hidden>Sign out</button>
+      </nav>
+    </header>
+    <main class="shell">
+      <div id="message" class="notice" role="status" aria-live="polite"></div>
+      <section id="loginPanel" class="card login">
+        <p class="muted">PRACTITIONER ACCESS</p>
+        <h1>A calmer care workflow.</h1>
+        <form id="loginForm">
+          <label for="email"
+            >Email<input
+              id="email"
+              type="email"
+              autocomplete="username"
+              required /></label
+          ><label for="password"
+            >Password<input
+              id="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              maxlength="128" /></label
+          ><button type="submit">Sign in</button>
+        </form>
+      </section>
+      <section id="workspace" hidden>
+        <h1>Review. Guide. Follow through.</h1>
+        <p id="systemHealth" class="muted"></p>
+        <p class="muted">
+          Single-practice workspace · Practitioners see only assigned cases.
+        </p>
+        <div class="layout">
+          <aside class="card sidebar">
+            <h2>Intake queue</h2>
+            <label for="filter"
+              >Find a case<input
+                id="filter"
+                placeholder="Name, journey or status"
+            /></label>
+            <p id="queueCount" class="muted"></p>
+            <div id="caseList"></div>
+          </aside>
+          <div>
+            <section id="emptyCase" class="card">
+              <h2>Select a case</h2>
+              <p>
+                Verify contact and suitability, write a plan, then approve its
+                exact version. Payment and publication follow approval.
+              </p>
+            </section>
+            <section id="caseDetail" hidden>
+              <div class="card">
+                <h2 id="caseName"></h2>
+                <small id="caseId"></small>
+                <p><span id="caseStatus" class="badge"></span></p>
+                <p id="planSummary" class="muted"></p>
+                <div id="assignment" hidden>
+                  <label for="assignee"
+                    >Assigned practitioner<select id="assignee"></select></label
+                  ><button id="assignButton" class="secondary">
+                    Assign case
+                  </button>
+                </div>
+                <div class="rows">
+                  <div>
+                    <h3>Intake</h3>
+                    <div id="intakeDetails"></div>
+                  </div>
+                  <div>
+                    <h3>Contact verification</h3>
+                    <p id="contactStatus" class="muted"></p>
+                    <form id="verifyForm">
+                      <label for="verificationNote"
+                        >Verification evidence<textarea
+                          id="verificationNote"
+                          minlength="20"
+                          maxlength="1000"
+                          required
+                          placeholder="Confirm via inbound business WhatsApp or phone callback. Record method and time, not an OTP."
+                        ></textarea></label
+                      ><button type="submit" class="secondary">
+                        Confirm verified contact
+                      </button>
+                    </form>
+                    <form id="recoverForm">
+                      <label for="recoveryNote"
+                        >Lost-link recovery evidence<textarea
+                          id="recoveryNote"
+                          minlength="20"
+                          maxlength="1000"
+                          required
+                          placeholder="Verify identity and contact again before replacing a lost link."
+                        ></textarea></label
+                      ><button type="submit" class="secondary">
+                        Replace access link
+                      </button>
+                      <p id="recoveredLink" class="muted"></p>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <h2>Suitability review</h2>
+                <form id="reviewForm">
+                  <label for="disposition"
+                    >Decision<select id="disposition">
+                      <option value="eligible">
+                        Appropriate for this nutrition service
+                      </option>
+                      <option value="referred">
+                        Refer for appropriate medical care
+                      </option>
+                    </select></label
+                  ><label for="reviewNote"
+                    >Patient-visible review note<textarea
+                      id="reviewNote"
+                      minlength="20"
+                      maxlength="3000"
+                      required
+                      placeholder="Explain scope, next steps and expected review availability. Urgent-screen cases must be referred."
+                    ></textarea></label
+                  ><button type="submit">Save review</button>
+                </form>
+              </div>
+              <div class="card">
+                <h2>Practitioner-written plan</h2>
+                <p class="muted">
+                  Check report context, health concerns, allergies, practical
+                  meals, substitutions and service scope. No automated clinical
+                  advice is generated.
+                </p>
+                <form id="draftForm">
+                  <label for="planText"
+                    >Plan / educational report explanation<textarea
+                      id="planText"
+                      minlength="40"
+                      maxlength="12000"
+                      style="min-height: 300px"
+                      required
+                    ></textarea></label
+                  ><button type="submit" class="secondary">
+                    Save new draft version
+                  </button>
+                </form>
+                <form id="approveForm">
+                  <p id="versionInfo" class="muted"></p>
+                  <label class="check" for="confirmReviewed"
+                    ><input id="confirmReviewed" type="checkbox" required />I
+                    reviewed this exact saved version, suitability and plan
+                    within my professional scope.</label
+                  ><button type="submit">Approve saved version</button>
+                </form>
+                <p id="signatureInfo" class="signature muted"></p>
+              </div>
+              <div class="card">
+                <h2>Payment and access</h2>
+                <p id="paymentInfo"></p>
+                <button id="reconcileButton" class="secondary">
+                  Reconcile provider payment / refund
+                </button>
+              </div>
+              <div class="card">
+                <h2>Follow-up tasks</h2>
+                <p class="muted">
+                  Accepted is provider acceptance. Delivered/read need signed
+                  status events. Manual completion records a staff attestation.
+                </p>
+                <div id="jobs"></div>
+              </div>
+              <div class="card">
+                <h2>Patient check-ins</h2>
+                <div id="checkins"></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      Private workspace. Use your own account and sign out on shared devices.
+      Practitioner qualifications are independently verified by the service
+      owner.
+    </footer>
+  </body>
+</html>
